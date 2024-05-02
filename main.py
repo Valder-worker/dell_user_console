@@ -89,8 +89,9 @@ def del_user(i):
                'screen/' + "Ошибка 2 _ " + strftime('%Y-%m-%d_%H.%M.%S', localtime()) + '.jpg')
     else:
         logging.error("не найдена картинка изменить свойства")
-        pyautogui.screenshot(
-            'screen/' + "Ошибка 1 _ " + strftime('%Y-%m-%d_%H.%M.%S', localtime()) + '.jpg')
+        #pyautogui.screenshot(
+        #    'screen/' + "Ошибка 1 _ " + strftime('%Y-%m-%d_%H.%M.%S', localtime()) + '.jpg')
+        pyautogui.screenshot(f'screen/Ошибка 1 _ {strftime('%Y-%m-%d_%H.%M.%S', localtime())}.jpg')
 
 def main():
     i = 0
