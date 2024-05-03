@@ -1,6 +1,6 @@
-#pip install python_imagesearch
-#pip install pyautogui
-#pip install keyboard
+# pip install python_imagesearch
+# pip install pyautogui
+# pip install keyboard
 
 
 import logging
@@ -13,6 +13,7 @@ from python_imagesearch.imagesearch import imagesearch_numLoop
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 print("Запуск удаления по клавишам ALT+Z")
+
 
 def del_user(i):
     def locate_and_click(image_path):
@@ -52,7 +53,8 @@ def del_user(i):
                                 print(f'Удалено абонентов за сегодня: {i}')
                             else:
                                 logging.error("Не найдена основная информация")
-                                pyautogui.screenshot(f'screen/Ошибка 6 _ {strftime('%Y-%m-%d_%H.%M.%S', localtime())}.jpg')
+                                pyautogui.screenshot(
+                                    f'screen/Ошибка 6 _ {strftime('%Y-%m-%d_%H.%M.%S', localtime())}.jpg')
                         else:
                             logging.error("Не найдена кнопка удаления")
                             pyautogui.screenshot(f'screen/Ошибка 6 _ {strftime('%Y-%m-%d_%H.%M.%S', localtime())}.jpg')
@@ -72,6 +74,7 @@ def del_user(i):
         logging.error("не найдена картинка изменить свойства")
         pyautogui.screenshot(f'screen/Ошибка 1 _ {strftime('%Y-%m-%d_%H.%M.%S', localtime())}.jpg')
 
+
 def main():
     i = 0
     while True:
@@ -82,6 +85,7 @@ def main():
         st = time.time() - st
         logging.info(f"Затраченное на удаление время: {st} секунд")
         print(f'Затраченное на итерацию время: {st} секунд.')
+
 
 if __name__ == "__main__":
     main()
